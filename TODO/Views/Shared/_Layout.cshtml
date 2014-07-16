@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    <link href="~/CSS/site.css" rel="stylesheet" />
+    <link href="~/CSS/jquery.ui.all.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/jquery-ui-1.8.24.min.js"></script>
+
+</head>
+<body>
+    <div id="wrapper">
+        <div id="header"></div>
+            <div id="main-content">
+                @RenderBody()
+            </div>
+    </div>
+</body>
+</html>

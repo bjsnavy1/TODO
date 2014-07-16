@@ -1,0 +1,34 @@
+﻿@model TODO.Models.Activities
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete Training Activity</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Activities</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Activity)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Activity)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Date)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Date)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to Activities", "Index")
+    </p>
+}

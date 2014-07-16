@@ -1,0 +1,43 @@
+﻿@model IEnumerable<TODO.Models.Activities>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml"; 
+}
+
+<h2>Welcome to the my current Training schedule</h2>
+
+<p style="font-size: large">
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table style="text-align: center">
+    <tr>
+        <th style="font-size: x-large">
+            @Html.DisplayNameFor(model => model.Activity)
+        </th>
+        <th style="font-size: x-large">
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th style="font-size: x-large">
+            <span>Actions</span>
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td style="width: 200px">
+                @Html.DisplayFor(modelItem => item.Activity)
+            </td>
+            <td style="width: 200px">
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td style="width: 200px">
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
+
+</table>
